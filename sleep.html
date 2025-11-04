@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>DreamEase </title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+
+<body>
+     <button class="back-btn" onclick="window.location.href='index.html'">⬅ Back</button>
+    <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle theme">🌞 Light</button>
+
+    <header>
+        <h1>DreamEase — Sleep Helper</h1>
+
+    </header>
+
+    <nav class="nav" role="tablist" aria-label="Sections">
+        <button class="active" data-section="sounds" role="tab">🎵 Sounds</button>
+        <button data-section="journal" role="tab">📔 Journal</button>
+        <button data-section="tracker" role="tab">🕒 Tracker</button>
+        <button data-section="reminder" role="tab">⏰ Reminder</button>
+        <button data-section="breathe" role="tab">💨 Breathe</button>
+    </nav>
+
+    <main>
+        <!-- SOUNDS -->
+        <section id="sounds" class="section active" aria-labelledby="sounds">
+            <div class="card">
+                <h2>🎶 Relaxing Sounds</h2>
+                <p class="lead">Select a track and press Play. (Playback only starts after you press Play.)</p>
+
+                <div class="row">
+                    <div class="col">
+                        <select id="soundSelect" aria-label="Sound select">
+                            <option value="https://soundimage.org/wp-content/uploads/2022/06/Thunder_6-13-22.mp3
+ 
+">Soft Piano</option>
+                            <option value="https://www.orangefreesounds.com/wp-content/uploads/2018/04/Gentle-rain-loop.mp3">Gentle Rain</option>
+                            <option value="https://www.orangefreesounds.com/wp-content/uploads/2015/08/Ocean-waves.mp3">Ocean Waves</option>
+                            <option value=" https://www.orangefreesounds.com/wp-content/uploads/2021/12/Crickets-and-wind-sounds-at-night-sound-effect.mp3 
+">Night Wind</option>
+                        </select>
+                    </div>
+                    <div class="col sound-controls">
+                        <button class="btn" id="playSoundBtn">▶ Play</button>
+                        <button class="btn secondary" id="stopSoundBtn">■ Stop</button>
+                    </div>
+                </div>
+
+                <audio id="soundPlayer" controls preload="none" style="margin-top:12px" aria-label="sound player"></audio>
+                <small class="note">Audio is played locally by your browser.</small>
+            </div>
+        </section>
+
+        <!-- JOURNAL -->
+        <section id="journal" class="section" aria-labelledby="journal">
+            <div class="card">
+                <h2>📔 Sleep Journal</h2>
+                <p class="lead">Write a short reflection before bed. Saved locally in your browser.</p>
+                <textarea id="journalArea" placeholder="I'm grateful for..." aria-label="Sleep journal"></textarea>
+                <div class="actions">
+                    <button class="btn" id="saveJournalBtn">Save Entry</button>
+                    <button class="btn secondary" id="loadJournalBtn">Load Last</button>
+                    <button class="btn secondary" id="clearJournalBtn">Clear</button>
+                </div>
+                <div id="journalStatus" class="status" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <!-- TRACKER -->
+        <section id="tracker" class="section" aria-labelledby="tracker">
+            <div class="card">
+                <h2>🕒 Sleep Tracker</h2>
+                <p class="lead">Log your sleep and view history.</p>
+
+                <label>Sleep time</label>
+                <input type="time" id="sleepTime" />
+
+                <label style="margin-top:8px">Wake time</label>
+                <input type="time" id="wakeTime" />
+
+                <div class="actions">
+                    <button class="btn" id="saveTrackBtn">Save Entry</button>
+                    <button class="btn secondary" id="clearTrackBtn">Clear All</button>
+                </div>
+
+                <div id="trackLog" class="log" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <!-- REMINDER -->
+        <section id="reminder" class="section" aria-labelledby="reminder">
+            <div class="card">
+                <h2>⏰ Bedtime Reminder</h2>
+                <p class="lead">Set a bedtime reminder. A gentle alert and popup will appear at the chosen time.</p>
+
+                <label>Reminder time</label>
+                <input type="time" id="reminderTime" />
+                <div class="actions">
+                    <button class="btn" id="setRemBtn">Set Reminder</button>
+                    <button class="btn secondary" id="cancelRemBtn">Cancel</button>
+                </div>
+
+                <div id="remStatus" style="margin-top:10px; font-weight:700;"></div>
+                <div id="remCountdown" style="margin-top:6px; color:var(--muted-light)"></div>
+            </div>
+        </section>
+
+        <!-- BREATHE -->
+        <section id="breathe" class="section" aria-labelledby="breathe">
+            <div class="card breathing-center">
+                <h2>💨 Guided Breathing</h2>
+                <p class="lead">Slow, meditative breathing. Use Start/Stop to control the cycle.</p>
+
+                <div class="breathing-ball" id="breathingBall" aria-hidden="true"></div>
+                <div class="breathing-text" id="breathingText" aria-live="polite">Press Start to begin</div>
+
+                <div class="actions" style="justify-content:center; margin-top:18px">
+                    <button class="btn" id="startBreathBtn">Start</button>
+                    <button class="btn secondary" id="stopBreathBtn">Stop</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Reminder popup -->
+    <div id="remPopup" class="popup" role="dialog" aria-modal="true" aria-hidden="true">
+        <h3 style="margin:0 0 8px">It's bedtime</h3>
+        <p style="margin:0 0 12px">Time to wind down. Take a deep breath.</p>
+        <div style="display:flex; gap:8px; justify-content:center">
+            <button class="btn" id="ackRemBtn">Goodnight</button>
+            <button class="btn secondary" id="snoozeRemBtn">Snooze 10m</button>
+        </div>
+    </div>
+
+    <!-- hidden reminder audio -->
+    <audio id="remAudio" preload="auto" src="https://cdn.pixabay.com/audio/2022/03/15/audio_0d219cf4e2.mp3"></audio>
+    <script src="scriptss.js"></script>
+</body>
+</html>

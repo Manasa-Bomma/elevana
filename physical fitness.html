@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Fitness Hub</title>
+     <link rel="stylesheet" href="physical.css" />
+</head>
+
+<body>
+ <button class="back-btn" onclick="window.location.href='index.html'">⬅ Back</button>
+    <header>🏋‍♀ Student Fitness Hub</header>
+
+    <section class="hero">
+        <h1>Build a Healthier You</h1>
+        <p>Explore workouts, challenges, nutrition, and recovery — all in one place.</p>
+    </section>
+
+    <!-- Section Buttons -->
+    <section class="sections">
+        <div class="card" onclick="showSection('workout')">
+            <h3>💪 Personalized Workout</h3>
+            <p>Tailored routines for your fitness level.</p>
+        </div>
+        <div class="card" onclick="showSection('challenge')">
+            <h3>🏆 Fitness Challenges</h3>
+            <p>Take 7-day or 30-day challenges!</p>
+        </div>
+        <div class="card" onclick="showSection('stretch')">
+            <h3>🧘 Stretch & Recover</h3>
+            <p>Relieve soreness and boost flexibility.</p>
+        </div>
+        <div class="card" onclick="showSection('food')">
+            <h3>🥗 Food & Diet</h3>
+            <p>Healthy meals for students on the go.</p>
+        </div>
+        <div class="card" onclick="showSection('progress')">
+            <h3>📈 Track Your Progress</h3>
+            <p>Monitor your achievements visually.</p>
+        </div>
+    </section>
+
+    <!-- Popups -->
+    <div id="workout" class="popup">
+        <button class="close-btn" onclick="closePopup()">Close ✖</button>
+        <h2>💪 Personalized Workout</h2>
+        <ul>
+            <li>Beginner: Jumping Jacks, Knee Push-ups, Plank – 15 mins</li>
+            <li>Intermediate: Squats, Push-ups, Lunges, Burpees – 25 mins</li>
+            <li>Advanced: Mountain Climbers, Jump Squats, Plank Holds – 40 mins</li>
+        </ul>
+    </div>
+
+    <div id="challenge" class="popup">
+        <button class="close-btn" onclick="closePopup()">Close ✖</button>
+        <h2>🏆 Fitness Challenges</h2>
+        <ul>
+            <li>7-Day Core Strength Challenge</li>
+            <li>30-Day Full Body Transformation</li>
+            <li>Push-up & Plank Endurance Challenge</li>
+        </ul>
+    </div>
+
+    <div id="stretch" class="popup">
+        <button class="close-btn" onclick="closePopup()">Close ✖</button>
+        <h2>🧘 Stretch & Recovery</h2>
+        <ul>
+            <li>Morning Energy Stretch</li>
+            <li>Post-Workout Cooldown</li>
+            <li>Bedtime Relaxation Routine</li>
+        </ul>
+    </div>
+
+    <div id="food" class="popup">
+        <button class="close-btn" onclick="closePopup()">Close ✖</button>
+        <h2>🥗 Food & Diet</h2>
+        <ul>
+            <li>Breakfast: Oatmeal, Eggs & Fruits</li>
+            <li>Lunch: Rice + Protein + Veggies</li>
+            <li>Snacks: Nuts, Yogurt, Smoothies</li>
+            <li>Dinner: Light soup or Salad</li>
+        </ul>
+    </div>
+
+    <div id="progress" class="popup">
+        <button class="close-btn" onclick="closePopup()">Close ✖</button>
+        <h2>📈 Track Your Progress</h2>
+        <p>Enter your progress and visualize improvement:</p>
+        <input type="number" id="goal" min="0" max="100" placeholder="Goal %">
+        <button onclick="updateProgress()">Update</button>
+        <div style="background:#e0e0e0;border-radius:30px;width:80%;margin:20px auto;height:25px;">
+            <div id="fill" style="background:#0077b6;height:100%;width:0%;border-radius:30px;transition:width 0.4s;"></div>
+        </div>
+        <p>Current Progress: <span id="progressValue">0%</span></p>
+    </div>
+
+    <footer>
+        Designed with 💙 by CODENOVA
+    </footer>
+
+   
+<script src="physical.js"></script>
+</body>
+
+</html>

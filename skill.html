@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Additional Skills – Student Life Tracker</title>
+    <link rel="stylesheet" href="skill.css" />
+</head>
+
+<body>
+     <button class="back-btn" onclick="window.location.href='index.html'">⬅ Back</button>
+    <header>
+        <h1>🌟 Additional Skills</h1>
+        <p>Empowering students with essential skills for a brighter future.</p>
+    </header>
+
+    <!-- 🎯 HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Grow Beyond Academics</h2>
+            <p>
+                Master skills that prepare you for real-world success — communication,
+                leadership, coding, time management, and more. Start your personal growth journey today!
+            </p>
+            <button class="hero-btn" onclick="scrollToSkills()">Explore Skills</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" alt="Student Learning Illustration" />
+        </div>
+    </section>
+
+    <!-- 🧠 SKILLS SECTION -->
+    <main id="skills-section">
+        <section class="skills-grid">
+            <div class="skill-card" data-skill="communication">
+                <h2>💬 Communication Skills</h2>
+                <p>Express yourself clearly and confidently.</p>
+            </div>
+
+            <div class="skill-card" data-skill="programming">
+                <h2>💻 Programming Skills</h2>
+                <p>Master coding and problem-solving techniques.</p>
+            </div>
+
+            <div class="skill-card" data-skill="time">
+                <h2>🕒 Time Management</h2>
+                <p>Balance study, work, and life effectively.</p>
+            </div>
+
+            <div class="skill-card" data-skill="teamwork">
+                <h2>🤝 Teamwork</h2>
+                <p>Collaborate and communicate with others.</p>
+            </div>
+
+            <div class="skill-card" data-skill="leadership">
+                <h2>📊 Leadership</h2>
+                <p>Lead with confidence and inspire others.</p>
+            </div>
+
+            <div class="skill-card" data-skill="stress">
+                <h2>🧘‍♀ Stress Management</h2>
+                <p>Stay calm and focused under pressure.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- 🎥 MODAL -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div id="videoContainer"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p> Designed with 💜 by CODENOVA</p>
+    </footer>
+
+    <script src="skill.js"></script>
+</body>
+
+</html>

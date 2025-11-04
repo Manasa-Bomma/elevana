@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELEVANA</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="sectionhome" >
+ 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+    <div class="container-fluid">
+
+      <!-- Brand -->
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="logoe.jpg" alt="ELEVANA Logo" width="46" height="46" class="me-2 rounded-circle">
+        <span class="fw-bold logo-text">ELEVANA</span>
+      </a>
+
+      <!-- Toggler (mobile) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="mainNav">
+
+        <!-- CENTER: Search (use mx-auto to center in wide screens) -->
+        <form class="d-flex mx-auto search-form" role="search" id="searchForm">
+          <input class="form-control me-2 rounded-pill" type="search" placeholder="Search..." id="searchInput" aria-label="Search">
+          <button class="btn btn-dark rounded-pill" type="submit">Go</button>
+        </form>
+
+        <!-- RIGHT: Nav links -->
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Prising</a></li>
+
+          <!-- MORE dropdown with 5 items -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              More
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreDropdown">
+              <li><a class="dropdown-item" href="mentalwellness.html">Mental Wellness</a></li>
+              <li><a class="dropdown-item" href="physical fitness.html">Physical Fitness</a></li>
+              <li><a class="dropdown-item" href="Academics.html">Academy</a></li>
+              <li><a class="dropdown-item" href="skill.html">Skills</a></li>
+              <li><a class="dropdown-item" href="sleep.html">Sleep</a></li>
+            </ul>
+          </li>
+
+          <!-- Login + Sign Up (buttons as links) -->
+          <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="nav-link btn btn-outline-dark px-3 py-1 rounded-pill" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  
+ <section class="hero">
+  <div class="hero-text">
+    <h1>Rise Smarter. <br>Grow Stronger.</h1>
+    <p>
+      Elevana empowers students to balance
+      <b>mental wellness, physical fitness, academics, skills,</b>
+      and <b>sleep</b> — achieving success with a peaceful mind.
+    </p>
+    <div class="btn-group">
+      <a href="#" class="btn btn-primary">Get Started</a>
+      <a href="#" class="btn btn-secondary">Explore Features</a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="hero2.png" alt="Illustration">
+  </div>
+</section>
+
+<section class="pillars-section">
+  <div class="container">
+    <h2>Explore Your Growth Areas</h2>
+    <div class="pillars-carousel">
+      <div class="pillar-card" style="background-color:  #fafafa;">
+        <h3>Mental Wellness</h3>
+        <p>Relax, meditate, and recharge your mind.</p>
+        <img src="mw.avif" alt="">
+        <button class="btn-learn" onclick="window.location.href='mentalwellness.html'">Explore</button>
+      </div>
+
+      <div class="pillar-card" style="background-color:  #fafafa;">
+        <h3>Physical Fitness</h3>
+        <p>Workouts, stretches, and daily strength.</p>
+        <img src="pf.jpg" alt="">
+        <button class="btn-learn" onclick="window.location.href='physical fitness.html'">Explore</button>
+      </div>
+
+      <div class="pillar-card" style="background-color: #fafafa;">
+        <h3>Academics</h3>
+        <p>Smart planning and learning guidance.</p>
+        <img src="ac.webp" alt="">
+        <button class="btn-learn" onclick="window.location.href='Academics.html'">Explore</button>
+      </div>
+
+      <div class="pillar-card" style="background-color: #fafafa;">
+        <h3>Skills</h3>
+        <p>Grow your creativity and expertise.</p>
+        <img src="skills.jpg" alt="">
+        <button class="btn-learn" onclick="window.location.href='skill.html'">Explore</button>
+      </div>
+        
+      <div class="pillar-card" style="background-color: #fafafa;">
+        <h3>Sleep</h3>
+        <p>Healthy rest for better days.</p>
+        <img src="sleep.jpg" alt="">
+        <button class="btn-learn" onclick="window.location.href='sleep.html'">Explore</button>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="why-section">
+  <div class="container">
+    <h2>Why Elevana Works</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <img src="pl.webp"  alt="Personalized Learning">
+        <h3>Personalized Learning</h3>
+        <p>Learn at your own pace with guidance designed for your unique growth and understanding.</p>
+      </div>
+
+      <div class="why-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/4151/4151022.png" alt="Trusted Content">
+        <h3>Trusted Content</h3>
+        <p>Created by experts with real-world experience, so you can learn confidently and clearly.</p>
+      </div>
+
+      <div class="why-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/4359/4359906.png" alt="Empowering Tools">
+        <h3>Empowering Tools</h3>
+        <p>Interactive tools and resources that help you stay motivated and make progress every day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero">
+  <div class="hero-content">
+    <h4 class="tagline">LEARNERS AND DREAMERS</h4>
+    <h1>You can <span>rise and learn</span> anything.</h1>
+    <p>Grow your skills with Elevana — where learning meets creativity and fun! 
+       Build your path with us.</p>
+    <button class="cta-btn">Start Learning 🚀</button>
+  </div>
+
+    <div class="hero-image">
+    <img src="hero.png" alt="Creative Learning" />
+      <div class="floating-shape shape1"></div>
+      <div class="floating-shape shape2"></div>
+      <div class="floating-shape shape3"></div>
+    </div>
+</section>
+
+<section class="testimonials-section">
+  <div class="container text-center">
+    <h2 class="section-title">What Our Users Say 💬</h2>
+    <p class="section-subtitle">Real experiences from students who’ve grown with Elevana</p>
+
+    <div class="testimonial-cards">
+      <div class="testimonial-card">
+        <img src="women.webp" alt="User 1">
+        <h3>Riya Sharma</h3>
+        <p class="role">Engineering Student</p>
+        <p class="review">“Elevana helped me balance my academics and mental wellness. I feel more productive every day!”</p>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="boy.avif" alt="User 2">
+        <h3>Aarav Patel</h3>
+        <p class="role">Fitness Enthusiast</p>
+        <p class="review">“I love how Elevana encourages a balanced lifestyle. My sleep and focus improved a lot!”</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="rating-section" class="rating-section">
+  <div class="rating-container">
+    <h2>Rate Your Experience</h2>
+
+    <div class="stars">
+      <span class="star" data-value="1">★</span>
+      <span class="star" data-value="2">★</span>
+      <span class="star" data-value="3">★</span>
+      <span class="star" data-value="4">★</span>
+      <span class="star" data-value="5">★</span>
+    </div>
+
+    <p id="ratingValue">You haven’t rated yet.</p>
+
+    <textarea id="reviewText" placeholder="Write your review..."></textarea>
+    <button id="submitBtn">Submit</button>
+  </div>
+</section>
+<footer class="text-center text-lg-start bg-light text-muted" id="footer">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+
+    <!-- Right -->
+    <div>
+      <a href="#" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <div class="row mt-3">
+        <!-- ELEVANA description -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-leaf me-3"></i>ELEVANA
+          </h6>
+          <p>
+            Helping students rise mentally, physically, and academically.  
+            Elevana inspires balanced growth through mindfulness, learning, and wellness.
+          </p>
+        </div>
+
+        <!-- Useful Links -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Quick Links</h6>
+          <p><a href="index.html" class="text-reset">Home</a></p>
+          <p><a href="#about" class="text-reset">About</a></p>
+          <p><a href="mental.html" class="text-reset">Mental Wellness</a></p>
+          <p><a href="fitness.html" class="text-reset">Physical Fitness</a></p>
+          <p><a href="academics.html" class="text-reset">Academics</a></p>
+          <p><a href="skills.html" class="text-reset">Skills</a></p>
+          <p><a href="sleep.html" class="text-reset">Sleep</a></p>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> Hyderabad, India</p>
+          <p><i class="fas fa-envelope me-3"></i> support@elevana.com</p>
+          <p><i class="fas fa-phone me-3"></i> +91 98765 43210</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Copyright -->
+  <div class="text-center p-4 bg-light border-top">
+    © 2025 Copyright:
+    <a class="text-reset fw-bold" href="#">Elevana.com</a>
+  </div>
+</footer>
+  <!-- LOGIN MODAL -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm">
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" id="loginEmail" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" id="loginPassword" required>
+            </div>
+            <button type="submit" class="btn btn-dark w-100">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGNUP MODAL -->
+  <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold" id="signupModalLabel">Sign Up</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="signupForm">
+            <div class="mb-3">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="signupName" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" id="signupEmail" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" id="signupPassword" required>
+            </div>
+            <button type="submit" class="btn btn-dark w-100">Create Account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap + App JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

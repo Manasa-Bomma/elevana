@@ -1,0 +1,140 @@
+
+        :root {
+            --primary: #0077b6;
+            --secondary: #00b4d8;
+            --light: #caf0f8;
+            --bg: #f4f8fb;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: var(--bg);
+            margin: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .hero {
+            padding: 60px 20px;
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .sections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background: #fff;
+            width: 250px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            background: var(--light);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Pop-up box */
+        .popup {
+            display: none;
+            background: #fff;
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .popup h2 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .popup ul {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        .close-btn {
+            background: var(--secondary);
+            border: none;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            float: right;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            margin-top: 50px;
+        }
+    
+        .back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #20a2c2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #33a2ca;
+}

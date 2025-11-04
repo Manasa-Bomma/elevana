@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Student Life Tracker — Peach</title>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+     <button class="back-btn" onclick="window.location.href='index.html'">⬅ Back</button>
+    <!-- 3D background canvas -->
+    <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+    <!-- Floating quote -->
+    <div id="quote" class="floating-quote" aria-live="polite"></div>
+
+    <!-- App -->
+    <main id="app">
+        <!-- HOMEPAGE: big flash cards -->
+
+        <section id="home" class="page active">
+            <header class="home-header">
+                <h1>Student Life Tracker</h1>
+                
+            </header>
+
+
+            <div class="flash-grid" role="navigation" aria-label="Main sections">
+                <button class="flash-card" data-target="study">
+                    <div class="card-icon">📚</div>
+                    <div class="card-title">Study Tracker</div>
+                    <div class="card-desc">Log hours and view weekly chart</div>
+                </button>
+
+                <button class="flash-card" data-target="events">
+                    <div class="card-icon">🗓</div>
+                    <div class="card-title">Events</div>
+                    <div class="card-desc">Add deadlines & reminders</div>
+                </button>
+
+                <button class="flash-card" data-target="tips">
+                    <div class="card-icon">💡</div>
+                    <div class="card-title">Useful Tips</div>
+                    <div class="card-desc">Study & life tips to boost productivity</div>
+                </button>
+
+                <button class="flash-card" data-target="wellness">
+                    <div class="card-icon">🌿</div>
+                    <div class="card-title">Wellness Zone</div>
+                    <div class="card-desc">Relaxation & quick wellbeing exercises</div>
+                </button>
+            </div>
+        </section>
+
+        <!-- STUDY -->
+        <section id="study" class="page">
+            <div class="panel">
+                <button class="back-btn" data-target="home">← Home</button>
+                <h2>Study Tracker</h2>
+
+                <div class="tracker">
+                    <label for="daySelect">Day</label>
+                    <select id="daySelect" aria-label="Choose day">
+                        <option>Mon</option>
+                        <option>Tue</option>
+                        <option>Wed</option>
+                        <option>Thu</option>
+                        <option>Fri</option>
+                        <option>Sat</option>
+                        <option>Sun</option>
+                    </select>
+
+                    <label for="hoursInput">Hours</label>
+                    <input id="hoursInput" type="number" min="0" step="0.1" placeholder="e.g. 2.5">
+
+                    <div class="controls">
+                        <button id="addHourBtn" class="primary">Add / Set</button>
+                        <button id="clearWeekBtn" class="ghost">Clear Week</button>
+                    </div>
+
+                    <div class="chart-card">
+                        <canvas id="studyChart" aria-label="Weekly study hours chart"></canvas>
+                    </div>
+
+                    <div class="summary">
+                        <div class="summary-box">
+                            <div class="label">This Week Total</div>
+                            <div id="weekTotal" class="value">0 hrs</div>
+                        </div>
+                        <div class="summary-box">
+                            <div class="label">Average / Day</div>
+                            <div id="avgDay" class="value">0 hrs</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENTS -->
+        <section id="events" class="page">
+            <div class="panel">
+                <button class="back-btn" data-target="home">← Home</button>
+                <h2>Upcoming Events</h2>
+
+                <div class="events-panel">
+                    <input id="eventTitle" type="text" placeholder="Event title (e.g., Assignment 1)">
+                    <input id="eventDate" type="date">
+                    <div class="controls">
+                        <button id="saveEventBtn" class="primary">Save Event</button>
+                        <button id="clearEventsBtn" class="ghost">Clear All</button>
+                    </div>
+
+                    <ul id="eventList" class="event-list" aria-live="polite"></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIPS -->
+        <section id="tips" class="page">
+            <div class="panel">
+                <button class="back-btn" data-target="home">← Home</button>
+                <h2>Useful Tips</h2>
+
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>Pomodoro</h4>
+                        <p class="tip-text">25 min focus → 5 min break. After 4 cycles, take a 20–30 min break.</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <h4>Active Recall</h4>
+                        <p class="tip-text">Test yourself instead of re-reading. Use flashcards or write from memory.</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <h4>Spaced Repetition</h4>
+                        <p class="tip-text">Review material at increasing intervals: 1 day, 3 days, 7 days, etc.</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <h4>Teach to Learn</h4>
+                        <p class="tip-text">Explain concepts aloud or to a friend — teaching reveals gaps in knowledge.</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <h4>Organize Notes</h4>
+                        <p class="tip-text">Keep short, structured notes — headings, bullets and examples.</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <h4>Plan Small Goals</h4>
+                        <p class="tip-text">Daily micro-goals (3 tasks) help maintain momentum and reduce overwhelm.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WELLNESS -->
+        <section id="wellness" class="page">
+            <div class="panel">
+                <button class="back-btn" data-target="home">← Home</button>
+                <h2>Wellness Zone</h2>
+
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>Breathing</h4>
+                        <p class="tip-text">4s inhale — 4s hold — 6s exhale. Repeat 6 times to calm your mind.</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <h4>Micro-Journal</h4>
+                        <p class="tip-text">Write 2 lines: (1) what you learned today, (2) one small goal for tomorrow.</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <h4>Stretch Break</h4>
+                        <p class="tip-text">Neck rolls, shoulder stretches and wrist rotations — 2–3 minutes between sessions.</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <h4>Hydration</h4>
+                        <p class="tip-text">Drink a glass of water every 1–2 hours to maintain focus.</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <h4>Mindful Walks</h4>
+                        <p class="tip-text">Short walks outdoors reset your attention and mood.</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <h4>Digital Detox</h4>
+                        <p class="tip-text">Try 30–60 minutes device-free before bed for better sleep quality.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
